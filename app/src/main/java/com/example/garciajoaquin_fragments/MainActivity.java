@@ -9,6 +9,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,11 +20,17 @@ public class MainActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
             switch (item.getItemId()){
                 case R.id.nav_home:
-                    selectedFragment = new FragmentHome();
+                    selectedFragment = new fragment_home();
+                    break;
+                case R.id.nav_list:
+                    selectedFragment = new fragment_list();
+                    break;
+                case R.id.nav_registration:
+                    selectedFragment = new fragment_registration();
                     break;
             }
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.Error, selectedFragment).commit();//Me he quedado aquí
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentHome, selectedFragment).commit();//Me he quedado aquí
 
             return true;
         });
