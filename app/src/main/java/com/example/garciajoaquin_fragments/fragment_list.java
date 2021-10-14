@@ -3,6 +3,8 @@ package com.example.garciajoaquin_fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +61,12 @@ public class fragment_list extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        //Error Aquí de momento
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);//<Error aquí
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(array_noms);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager((this)));
+
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
 }
